@@ -1,20 +1,18 @@
 <p align="center">
-	<img src="https://github.com/EngajamentoFlow/unoapi/blob/main/unoapi.jpg" alt="Quepasa-logo" width="100" />	
-	<p align="center">Quepasa é um software de código aberto, totalmente gratuito, para troca de mensagens com a plataforma Whatsapp</p>
+	<img src="https://github.com/EngajamentoFlow/unoapi/blob/main/unoapi.png" alt="Quepasa-logo" width="100" />	
+	<p align="center">UNOAPI é um software de código aberto, totalmente gratuito, para troca de mensagens com a plataforma Whatsapp</p>
 </p>
 <hr />
 <p align="left">
 	<img src="https://telegram.org/favicon.ico" alt="Telegram-logo" width="32" />
-	<span>Grupo e Canal Telegram: </span>
-	<a href="https://t.me/quepasa_api" target="_blank">Grupo</a>
-	<span> || </span>
-	<a href="https://t.me/quepasa_channel" target="_blank">Canal</a>
+	<span>Grupo Telegram: </span>
+	<a href="https://t.me/unoapii" target="_blank">Grupo</a>
 </p>
 <hr />
 <p align="left">
 	<img src="https://whatsapp.com/favicon.ico" alt="WhatsAPP-logo" width="32" />
 	<span>Grupo WhatsaAPP: </span>
-	<a href="https://chat.whatsapp.com/Cv5WfmujRzE09yQ6hagYim" target="_blank">Grupo</a>
+	<a href="https://chat.whatsapp.com/KOc9il7AdQVCG06fTmG3Uh" target="_blank">Grupo</a>
 </p>
 ----------------------------------------------------------------------------
 </p>
@@ -24,7 +22,7 @@
 <img src="https://github.com/EngajamentoFlow/quepasa/blob/main/Contribui%C3%A7%C3%A3o.png" alt="Quepasa-logo" width="200" />
 </p>
 
-**Manual de Instalação Chatwoot+N8N+Quepasa**
+**Manual de Instalação Chatwoot+UNOAPI**
 
 ----------------------------------------------------------------------------
 </p>
