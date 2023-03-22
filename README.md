@@ -25,252 +25,98 @@
 **Manual de Instalação Chatwoot+UNOAPI**
 
 ----------------------------------------------------------------------------
-</p>
-Vamos precisar de 3 subdomínios
-</p>
+**Manual ChatWoot+UNOAPI**
+
+Vamos precisar de 1 subdomínios
+
 1º Chatwoot
-</p>
 chatwoot.dominio.com.br
-</p>
-2º N8N
-</p>
-n8n.dominio.com.br
-</p>
-3º Quepasa
-</p>
-quepa.dominio.com.br
-</p>
+
+app.mdatatelecom.com.br
+
 ----------------------------------------------------------------------------
 
 **Manual de Instalação ChatWoot**
 
 sudo apt update && sudo apt upgrade
-</p>
 wget https://get.chatwoot.app/linux/install.sh
-</p>
 chmod +x install.sh
-</p>
 ./install.sh --install
-</p>
-Use as opções abaixo
-</p>
+
+Use as opções abaixo.
+
 yes
-</p>
 chatwoot.dominio.com.br
-</p>
 contato@dominio.com.br
-</p>
 yes
-</p>
 yes
-</p>
+
 nano /home/chatwoot/chatwoot/.env 
-</p>
-Adicione
-</p>
+
+#adicione a Linha
+WHATSAPP_CLOUD_BASE_URL=http://localhost:9876 
+
 ----------------------------------------------------------------------------
 
-**Manual de Instalação N8N**
+**Recompilando seu Chatwoot**
+
+sudo -i -u chatwoot
+cd chatwoot
+git checkout develop && git pull
+bundle
+yarn
+rake assets:precompile RAILS_ENV=production
+RAILS_ENV=production bundle exec rake db:migrate
+exit
+systemctl daemon-reload
+systemctl restart chatwoot.target
+
+----------------------------------------------------------------------------
+
+**Manual de Instalação UNOAPI**
 
 sudo apt update && sudo apt upgrade
-</p>
-curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
-</p>
-sudo apt-get install -y nodejs
-</p>
-sudo npm install n8n -g
-</p>
-npm update -g n8n
-</p>
+git clone https://github.com/clairton/unoapi-cloud
+cd unoapi-cloud
+chmod 777 data
 npm install pm2 -g
-</p>
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-</p>
-sudo apt install ./google-chrome-stable_current_amd64.deb
-</p>
-sudo nano /etc/nginx/sites-available/n8n
-</p>
-server {
-</p>
-  server_name n8n.dominio.com.br;
-</p>
-  location / {
-</p>
-    proxy_pass http://127.0.0.1:5678;
-</p>
-    proxy_http_version 1.1;
-</p>
-    proxy_set_header Upgrade $http_upgrade;
-</p>
-    proxy_set_header Connection 'upgrade';
-</p>
-    proxy_set_header Host $host;
-</p>
-    proxy_set_header X-Real-IP $remote_addr;
-</p>
-    proxy_set_header X-Forwarded-Proto $scheme;
-</p>
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-</p>
-    proxy_cache_bypass $http_upgrade;
-</p>
-    proxy_buffering off;
-</p>
-    proxy_cache off;
-</p>
-  }
-</p>
-  }
-</p>
-sudo ln -s /etc/nginx/sites-available/n8n /etc/nginx/sites-enabled
-</p>
-sudo certbot --nginx
-</p>
-sudo service nginx restart
-</p>
-pm2 start n8n --cron-restart="0 0 * * *" -- start
-</p>
+yarn install
+
+Cole codigo abaixo
+
+nano .env
+
+WEBHOOK_URL=http://localhost:3000/webhooks/whatsapp
+WEBHOOK_TOKEN=(Token Plataforna Superadmin)
+WEBHOOK_HEADER=api_access_token
+IGNORE_GROUP_MESSAGES=false
+IGNORE_BROADCAST_STATUSES=false
+
+yarn build
+
+pm2 start dist/index.js --name UNOAPI
+pm2 startup ubuntu -u root
+sudo env PATH=$PATH:/usr/bin pm2 startup ubuntu -u root --hp
+pm2 save
+
 ----------------------------------------------------------------------------
 
-**Manual de Instalação API Quepasa**
+**Acesse ChatWoot**
 
-git clone https://github.com/sufficit/sufficit-quepasa /opt/quepasa-source
-</p>
-bash /opt/quepasa-source/helpers/install.sh
-</p>
-sudo nano /etc/nginx/sites-available/quepasa
-</p>
-server {
-</p>
-  server_name quepasa.dominio.com.br;
-</p>
-  location / {
-</p>
-    proxy_pass http://127.0.0.1:31000;
-</p>
-    proxy_http_version 1.1;
-</p>
-    proxy_set_header Upgrade $http_upgrade;
-</p>
-    proxy_set_header Connection 'upgrade';
-</p>
-    proxy_set_header Host $host;
-</p>
-    proxy_set_header X-Real-IP $remote_addr;
-</p>
-    proxy_set_header X-Forwarded-Proto $scheme;
-</p>
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-</p>
-    proxy_cache_bypass $http_upgrade;
-</p>
-  }
-</p>
-  }
+Caixas de Entrada
+Adicionar Caixas de Entrada
+Canal do whatsapp
 
-sudo ln -s /etc/nginx/sites-available/quepasa /etc/nginx/sites-enabled
-</p>
-sudo certbot --nginx
-</p>
-sudo service nginx restart
-</p>
-nano /opt/quepasa-source/src/.env
-</p>
-Alterar linha 1
-</p>
-WEBSOCKETSSL=false
-</p>
-para
-</p>
-WEBSOCKETSSL=true
-</p>
-systemctl restart quepasa
-</p>
-----------------------------------------------------------------------------
+Nome da Caixa de Entrada (Adicione o que desejar)
+Número de telefone (+Número de telefone)
+ID do número de telefone (+Número de telefone )
+ID da Conta de Negócios (Número de telefone )
+Chave da API (any)
 
-**Primeira parte da Instalação Finalizadas**
+Print no material Google Drive
 
-Acesse:
-</p>
-chatwoot.dominio.com.br
-</p>
-n8n.dominio.com.br
-</p>
-quepa.dominio.com.br/setup
-</p>
-Faça os cadastros em todos eles
-</p>
-----------------------------------------------------------------------------
-</p>
-----------------------------------------------------------------------------
+https://drive.google.com/drive/folders/1iqnDNIUou-Ly_9-WCI8_8J1Fqe9mrCH-?usp=share_link
 
-**Instalar NO no N8N**
-
-n8n-nodes-chatwoot
-</p>
-n8n-nodes-quepasa
-</p>
-Baixar Workflow
-</p>
-Disponiveis nesse Github
-</p>
-----------------------------------------------------------------------------
-</p>
-
-**Configue os Worflows no N8N**
-
-**Worflow QuepasaQrcode**
-
-</p>
-Acesse seuchatwoot/super_admin e crie um token na opção Platform Apps
-</p>
-Segundo NO “COLOCANDO DADOS" URL N8N, URL DO QUEPASA, URL CHATWOOT, TOKEN TOKEN PLATFORM APPS
-</p>
-Coloque suas credenciais NOS PostgreSQL, elas estarão em seu .env na pasta /home/chatwoot/chatwoot
-</p>
-Ligue seu Workflow e divirta-se 
-
-</p>
-----------------------------------------------------------------------------
-</p>
-
-**Worflows ChatwootToQuepasa QuepasaToChatwoot**
-
-</p>
-Adicione numeros NOS Trigger com numeros correspondente a Workflow
-</p>
-----------------------------------------------------------------------------
-
-**Criando Seu Bot Agente**
-
-Acesse: chatwoot.dominio.com.br/superadmin
-</p>
-Crie seu Token Platform Apps
-</p>
-----------------------------------------------------------------------------
-
-**Crie uma Automação conforme a imagem abaixo**
-
-<img src="https://github.com/EngajamentoFlow/quepasa/blob/main/Automa%C3%A7%C3%A3o.png" alt="Automação" width="1000" />
-</p>
-----------------------------------------------------------------------------
-
-**Criando sua Caixa de Entrada**
-
-Criar um contato no Chatwoot
-</p>
-Quepasa Control
-</p>
-control@quepasa.io
-</p>
-Envia uma mensagem para Contato Criado
-</p>
-Quepasa Control
-</p>
-/qrcode
-</p>
-Leia QRCODE
-</p>
 ----------------------------------------------------------------------------
 
 **Pronto tudo Funcionando**
