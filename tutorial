@@ -128,6 +128,10 @@ IGNORE_GROUP_MESSAGES=false
 </p>
 IGNORE_BROADCAST_STATUSES=false
 </p>
+SEND_CONNECTION_STATUS=false
+</p>
+IGNORE_CALLS=aqui sua mensagem
+</p>
 yarn build
 </p>
 pm2 start dist/index.js --name UNOAPI
