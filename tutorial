@@ -104,6 +104,7 @@ systemctl restart chatwoot.target
 </p>
 sudo apt update && sudo apt upgrade
 </p>
+</p>
 git clone https://github.com/clairton/unoapi-cloud
 </p>
 cd unoapi-cloud
