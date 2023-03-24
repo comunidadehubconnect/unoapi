@@ -42,7 +42,7 @@ app.mdatatelecom.com.br
 **Manual de Instalação ChatWoot**
 
 </p>
-sudo apt update && sudo apt upgrade
+sudo apt update && apt upgrade -y
 </p>
 wget https://get.chatwoot.app/linux/install.sh
 </p>
