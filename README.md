@@ -178,19 +178,6 @@ Print abaixo
 ----------------------------------------------------------------------------
 </p>
 
-**Pronto tudo Funcionando**
-
-</p>
-----------------------------------------------------------------------------
-</p>
-
-**Gostou do Tutorial? Faça sua Contribuição**
-
-<img src="https://github.com/EngajamentoFlow/quepasa/blob/main/Contribui%C3%A7%C3%A3o.png" alt="Quepasa-logo" width="200" />
-</p>
-----------------------------------------------------------------------------
-</p>
-
 **Atualização UNOAPI**
 
 </p>
@@ -244,4 +231,18 @@ Para voltar para produção
 git checkout main
 </p>
 
+----------------------------------------------------------------------------
+
+</p>
+
+**Pronto tudo Funcionando**
+
+</p>
+----------------------------------------------------------------------------
+</p>
+
+**Gostou do Tutorial? Faça sua Contribuição**
+
+<img src="https://github.com/EngajamentoFlow/quepasa/blob/main/Contribui%C3%A7%C3%A3o.png" alt="Quepasa-logo" width="200" />
+</p>
 ----------------------------------------------------------------------------
