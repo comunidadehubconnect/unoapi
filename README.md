@@ -189,3 +189,33 @@ Print abaixo
 <img src="https://github.com/EngajamentoFlow/quepasa/blob/main/Contribui%C3%A7%C3%A3o.png" alt="Quepasa-logo" width="200" />
 </p>
 ----------------------------------------------------------------------------
+</p>
+
+**Atualização UNOAPI**
+
+</p>
+
+cd unoapi-cloud
+</p>
+git pull
+</p>
+rm -r node_modules
+</p>
+rm -r dist
+</p>
+Confira sempre .env se esta como no manual acima
+</p>
+</p>
+
+</p>
+</p>
+yarn install
+</p>
+yarn build
+</p>
+pm2 restart all
+</p>
+
+----------------------------------------------------------------------------
+
+
