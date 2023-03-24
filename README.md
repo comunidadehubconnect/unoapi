@@ -131,7 +131,7 @@ IGNORE_BROADCAST_STATUSES=false
 </p>
 SEND_CONNECTION_STATUS=false
 </p>
-REJECT_CALLS=mensagem que vai para o cliente
+REJECT_CALLS_WEBHOOK=mensagem que vai para o cliente
 </p>
 WEBHOOK_CALLS_MESSAGE=mensagem que vai para o webhook
 </p>
