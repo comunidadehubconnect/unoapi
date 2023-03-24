@@ -131,8 +131,10 @@ IGNORE_BROADCAST_STATUSES=false
 </p>
 SEND_CONNECTION_STATUS=false
 </p>
-WEBHOOK_CALLS_MESSAGE:aqui sua mensagem
-
+REJECT_CALLS=mensagem que vai para o cliente
+</p>
+WEBHOOK_CALLS_MESSAGE=mensagem que vai para o webhook
+</p>
 yarn build
 </p>
 pm2 start dist/index.js --name UNOAPI
