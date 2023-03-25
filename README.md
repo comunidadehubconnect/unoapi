@@ -14,7 +14,9 @@
 	<span>Grupo WhatsaAPP: </span>
 	<a href="https://chat.whatsapp.com/KOc9il7AdQVCG06fTmG3Uh" target="_blank">Grupo</a>
 </p>
+
 ----------------------------------------------------------------------------
+
 </p>
 
 **Gostou do Tutorial? Faça sua Contribuição**
@@ -22,82 +24,7 @@
 <img src="https://github.com/EngajamentoFlow/quepasa/blob/main/Contribui%C3%A7%C3%A3o.png" alt="Quepasa-logo" width="200" />
 </p>
 
-**Manual de Instalação Chatwoot+UNOAPI**
-
 ----------------------------------------------------------------------------
-**Manual ChatWoot+UNOAPI**
-
-</p>
-Vamos precisar de 1 subdomínios
-</p>
-1º Chatwoot
-</p>
-chatwoot.dominio.com.br
-</p></p>
-app.mdatatelecom.com.br
-</p>
-----------------------------------------------------------------------------
-</p>
-
-**Manual de Instalação ChatWoot**
-
-</p>
-sudo apt update && apt upgrade -y
-</p>
-wget https://get.chatwoot.app/linux/install.sh
-</p>
-chmod +x install.sh
-</p>
-./install.sh --install
-</p>
-Use as opções abaixo.
-</p>
-yes
-</p>
-chatwoot.dominio.com.br
-</p>
-contato@dominio.com.br
-</p>
-yes
-</p>
-yes
-</p>
-nano /home/chatwoot/chatwoot/.env 
-</p>
-#adicione a Linha
-</p>
-WHATSAPP_CLOUD_BASE_URL=http://localhost:9876 
-</p>
-
-----------------------------------------------------------------------------
-</p>
-
-**Recompilando seu Chatwoot**
-
-</p>
-sudo -i -u chatwoot
-</p>
-cd chatwoot
-</p>
-git checkout develop && git pull
-</p>
-bundle
-</p>
-yarn
-</p>
-rake assets:precompile RAILS_ENV=production
-</p>
-RAILS_ENV=production bundle exec rake db:migrate
-</p>
-exit
-</p>
-systemctl daemon-reload
-</p>
-systemctl restart chatwoot.target
-</p>
-
-----------------------------------------------------------------------------
-</p>
 
 **Manual de Instalação UNOAPI**
 
@@ -150,6 +77,7 @@ pm2 save
 </p>
 
 ----------------------------------------------------------------------------
+
 </p>
 
 **Acesse ChatWoot**
@@ -233,6 +161,110 @@ Para voltar para produção
 </p>
 git checkout main
 </p>
+
+----------------------------------------------------------------------------
+
+----------------------------------------------------------------------------
+
+**Versão Docker**
+
+**Manual de Instalação UNOAPI via Docker**
+
+</p>
+mkdir unoapi
+</p>
+Verifique se codigo copiado está extamente alinhado igual abaixo
+</p>
+
+<img src="https://github.com/clairton/unoapi-cloud/blob/main/examples/chatwoot/prints/copy_token.png" alt="Quepasa-logo" width="1000" />
+
+</p>
+
+nano docker-compose.yml
+</p>
+</p>
+version: '3'
+</p>
+services:
+</p>
+  app:
+  </p>
+    image: clairton/unoapi-cloud:latest
+    </p>
+    volumes:
+    </p>
+      - ./data:/home/u/app/data
+      </p>
+    deploy:
+    </p>
+      restart_policy:
+      </p>
+        condition: on-failure
+	</p>
+    environment:
+    </p>
+      BASE_URL: http://localhost:9876
+      </p>
+      WEBHOOK_URL: https://seudominio/webhooks/whatsapp
+      </p>
+      WEBHOOK_TOKEN: tokenagente
+      </p>
+      WEBHOOK_HEADER: webhook header name
+      </p>
+      BASE_URL: current base url to download medias
+      </p>
+      IGNORE_GROUP_MESSAGE: false to send group messages received in socket to webhook, default true
+      </p>
+      IGNORE_BROADCAST_STATUSE: false to send stories in socket to webhook, default true
+      </p>
+      IGNORE_BROADCAST_MESSAGE: false to send broadcast messages in socket to webhook, default false
+      </p>
+      IGNORE_OWN_MESSAGES: false to send own messages in socket to webhook, default true
+      </p>
+      IGNORE_CALLS: message to send when receiva a call, default is empty and not reject
+      </p>
+      WEBHOOK_CALLS_MESSAGE: message to send webook when receive a call, default is empty and not send
+      </p>
+      SEND_CONNECTION_STATUS: true to send all connection status to webhook, false to send only important messages, default is true
+      </p>
+
+----------------------------------------------------------------------------
+
+ **Colocando para roda**
+ 
+ docker compose up -d
+
+----------------------------------------------------------------------------
+
+</p>
+
+**Acesse ChatWoot**
+
+</p>
+Caixas de Entrada
+</p>
+Adicionar Caixas de Entrada
+</p>
+Canal do whatsapp
+</p>
+Nome da Caixa de Entrada (Adicione o que desejar)
+</p>
+Número de telefone (+Número de telefone)
+</p>
+ID do número de telefone (+Número de telefone )
+</p>
+ID da Conta de Negócios (Número de telefone )
+</p>
+Chave da API (any)
+</p>
+Print abaixo
+
+<img src="https://github.com/clairton/unoapi-cloud/blob/main/examples/chatwoot/prints/copy_token.png" alt="Quepasa-logo" width="1000" />
+<img src="https://github.com/clairton/unoapi-cloud/blob/main/examples/chatwoot/prints/create_channel.png" alt="Quepasa-logo" width="1000" />
+<img src="https://github.com/clairton/unoapi-cloud/blob/main/examples/chatwoot/prints/create_contact.png" alt="Quepasa-logo" width="1000" />
+<img src="https://github.com/clairton/unoapi-cloud/blob/main/examples/chatwoot/prints/read_qrcode.png" alt="Quepasa-logo" width="1000" />
+
+----------------------------------------------------------------------------
 
 ----------------------------------------------------------------------------
 
