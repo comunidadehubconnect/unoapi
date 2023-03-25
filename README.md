@@ -124,21 +124,29 @@ rm -r dist
 Confira sempre .env
 </p>
 </p>
-WEBHOOK_URL=http://localhost:3000/webhooks/whatsapp
-</p>
-WEBHOOK_TOKEN=(Token Plataforna Superadmin)
-</p>
-WEBHOOK_HEADER=api_access_token
-</p>
-IGNORE_GROUP_MESSAGES=false
-</p>
-IGNORE_BROADCAST_STATUSES=false
-</p>
-SEND_CONNECTION_STATUS=false
-</p>
-REJECT_CALLS=mensagem que vai para o cliente
-</p>
-REJECT_CALLS_WEBHOOK=mensagem que vai para o webhook
+      </p>
+      WEBHOOK_URL: https://seudominio/webhooks/whatsapp
+      </p>
+      WEBHOOK_TOKEN: tokenagente
+      </p>
+      WEBHOOK_HEADER: webhook header name
+      </p>
+      BASE_URL: current base url to download medias
+      </p>
+      IGNORE_GROUP_MESSAGE: false to send group messages received in socket to webhook, default true
+      </p>
+      IGNORE_BROADCAST_STATUSE: false to send stories in socket to webhook, default true
+      </p>
+      IGNORE_BROADCAST_MESSAGE: false to send broadcast messages in socket to webhook, default false
+      </p>
+      IGNORE_OWN_MESSAGES: false to send own messages in socket to webhook, default true
+      </p>
+      IGNORE_CALLS: message to send when receiva a call, default is empty and not reject
+      </p>
+      WEBHOOK_CALLS_MESSAGE: message to send webook when receive a call, default is empty and not send
+      </p>
+      SEND_CONNECTION_STATUS: true to send all connection status to webhook, false to send only important messages, default is true
+      </p>
 </p>
 </p>
 yarn install
@@ -176,7 +184,7 @@ mkdir unoapi
 Verifique se codigo copiado está extamente alinhado igual abaixo
 </p>
 
-<img src="https://github.com/clairton/unoapi-cloud/blob/main/examples/chatwoot/prints/copy_token.png" alt="Quepasa-logo" width="1000" />
+<img src="https://github.com/EngajamentoFlow/unoapi/blob/main/modelo.png" alt="Quepasa-logo" width="1000" />
 
 </p>
 
