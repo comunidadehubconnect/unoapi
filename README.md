@@ -194,6 +194,8 @@ version: '3'
 services:
   app:
     image: clairton/unoapi-cloud:latest
+    ports:
+    - 9876:9876
     volumes:
       - ./data:/home/u/app/data
     deploy:
