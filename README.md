@@ -48,7 +48,9 @@ yarn install
 Cole codigo abaixo
 </p>
 nano .env
-</p>
+
+```
+
 WEBHOOK_URL=http://localhost:3000/webhooks/whatsapp
 </p>
 WEBHOOK_TOKEN=(Token Plataforna Superadmin)
@@ -75,6 +77,7 @@ sudo env PATH=$PATH:/usr/bin pm2 startup ubuntu -u root --hp
 </p>
 pm2 save
 </p>
+```
 
 ----------------------------------------------------------------------------
 
