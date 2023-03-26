@@ -31,10 +31,7 @@
 </p>
 sudo apt update && apt upgrade -y
 </p>
-
-```
 sudo apt-get install -y libgbm-dev wget unzip fontconfig locales gconf-service libasound2 libatk1.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libexpat1 libfontconfig1 libgcc1 libgconf-2-4 libgdk-pixbuf2.0-0 libglib2.0-0 libgtk-3-0 libnspr4 libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils
-```
 </p>
 </p>
 </p>
@@ -123,30 +120,21 @@ rm -r dist
 Confira sempre .env
 </p>
 </p>
-      </p>
-      WEBHOOK_URL: https://seudominio/webhooks/whatsapp
-      </p>
-      WEBHOOK_TOKEN: tokenagente
-      </p>
-      WEBHOOK_HEADER: webhook header name
-      </p>
-      BASE_URL: current base url to download medias
-      </p>
-      IGNORE_GROUP_MESSAGE: false to send group messages received in socket to webhook, default true
-      </p>
-      IGNORE_BROADCAST_STATUSE: false to send stories in socket to webhook, default true
-      </p>
-      IGNORE_BROADCAST_MESSAGE: false to send broadcast messages in socket to webhook, default false
-      </p>
-      IGNORE_OWN_MESSAGES: false to send own messages in socket to webhook, default true
-      </p>
-      IGNORE_CALLS: message to send when receiva a call, default is empty and not reject
-      </p>
-      WEBHOOK_CALLS_MESSAGE: message to send webook when receive a call, default is empty and not send
-      </p>
-      SEND_CONNECTION_STATUS: true to send all connection status to webhook, false to send only important messages, default is true
-      </p>
-</p>
+
+```
+WEBHOOK_URL: https://seudominio/webhooks/whatsapp
+WEBHOOK_TOKEN: tokenagente
+WEBHOOK_HEADER: webhook header name
+BASE_URL: current base url to download medias
+IGNORE_GROUP_MESSAGE: false to send group messages received in socket to webhook, default true
+IGNORE_BROADCAST_STATUSE: false to send stories in socket to webhook, default true
+IGNORE_BROADCAST_MESSAGE: false to send broadcast messages in socket to webhook, default false
+IGNORE_OWN_MESSAGES: false to send own messages in socket to webhook, default true
+IGNORE_CALLS: message to send when receiva a call, default is empty and not reject
+WEBHOOK_CALLS_MESSAGE: message to send webook when receive a call, default is empty and not send
+SEND_CONNECTION_STATUS: true to send all connection status to webhook, false to send only important messages, default is true
+```
+
 </p>
 yarn install
 </p>
@@ -189,51 +177,31 @@ Verifique se codigo copiado está extamente alinhado igual abaixo
 
 nano docker-compose.yml
 </p>
-</p>
+
+```
 version: '3'
-</p>
 services:
-</p>
   app:
-  </p>
     image: clairton/unoapi-cloud:latest
-    </p>
     volumes:
-    </p>
       - ./data:/home/u/app/data
-      </p>
     deploy:
-    </p>
       restart_policy:
-      </p>
         condition: on-failure
-	</p>
     environment:
-    </p>
-      BASE_URL: http://localhost:9876
-      </p>
+      BASE_URL: http://ip:9876
       WEBHOOK_URL: https://seudominio/webhooks/whatsapp
-      </p>
       WEBHOOK_TOKEN: tokenagente
-      </p>
       WEBHOOK_HEADER: webhook header name
-      </p>
       BASE_URL: current base url to download medias
-      </p>
       IGNORE_GROUP_MESSAGE: false to send group messages received in socket to webhook, default true
-      </p>
       IGNORE_BROADCAST_STATUSE: false to send stories in socket to webhook, default true
-      </p>
       IGNORE_BROADCAST_MESSAGE: false to send broadcast messages in socket to webhook, default false
-      </p>
       IGNORE_OWN_MESSAGES: false to send own messages in socket to webhook, default true
-      </p>
       IGNORE_CALLS: message to send when receiva a call, default is empty and not reject
-      </p>
       WEBHOOK_CALLS_MESSAGE: message to send webook when receive a call, default is empty and not send
-      </p>
       SEND_CONNECTION_STATUS: true to send all connection status to webhook, false to send only important messages, default is true
-      </p>
+```
 
 ----------------------------------------------------------------------------
 
