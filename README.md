@@ -33,6 +33,26 @@
 
 ----------------------------------------------------------------------------
 
+**Adicione URL abaixo no .env do Chatwoot**
+
+WHATSAPP_CLOUD_BASE_URL=http://localhost:9876
+
+----------------------------------------------------------------------------
+
+**Recompilando seu Chatwoot**
+
+sudo -i -u chatwoot
+cd chatwoot
+git checkout develop && git pull
+bundle
+yarn
+rake assets:precompile RAILS_ENV=production
+RAILS_ENV=production bundle exec rake db:migrate
+exit
+systemctl daemon-reload
+systemctl restart chatwoot.target
+
+----------------------------------------------------------------------------
 
 **Manual de Instalação UNOAPI**
 
