@@ -193,8 +193,31 @@ git checkout main
 
 **Manual de Instalação UNOAPI via Docker**
 
+----------------------------------------------------------------------------
+
+**Adicione URL abaixo no .env do Chatwoot**
+
+WHATSAPP_CLOUD_BASE_URL=http://ip:9876
+
+----------------------------------------------------------------------------
+
+**Recompilando seu Chatwoot**
+
+</p>
+cd /chatwoot
+</p>
+RAILS_ENV=production bundle exec rake db:migrate
+</p>
+docker compose up -d
+</p>
+
+----------------------------------------------------------------------------
+</p>
+cd
 </p>
 mkdir unoapi
+</p>
+cd unoapi
 </p>
 Verifique se codigo copiado está extamente alinhado igual abaixo
 </p>
@@ -205,8 +228,6 @@ Verifique se codigo copiado está extamente alinhado igual abaixo
 nano unoapi
 </p>
 nano docker-compose.yml
-</p>
-
 </p>
 
 ```
@@ -222,18 +243,17 @@ services:
       restart_policy:
         condition: on-failure
     environment:
-      BASE_URL: http://ip:9876
-      WEBHOOK_URL: https://seudominio/webhooks/whatsapp
-      WEBHOOK_TOKEN: tokenagente
-      WEBHOOK_HEADER: webhook header name
-      BASE_URL: current base url to download medias
-      IGNORE_GROUP_MESSAGE: false to send group messages received in socket to webhook, default true
-      IGNORE_BROADCAST_STATUSE: false to send stories in socket to webhook, default true
-      IGNORE_BROADCAST_MESSAGE: false to send broadcast messages in socket to webhook, default false
-      IGNORE_OWN_MESSAGES: false to send own messages in socket to webhook, default true
-      IGNORE_CALLS: message to send when receiva a call, default is empty and not reject
-      WEBHOOK_CALLS_MESSAGE: message to send webook when receive a call, default is empty and not send
-      SEND_CONNECTION_STATUS: true to send all connection status to webhook, false to send only important messages, default is true
+      BASE_URL: http://194.60.87.179:9876
+      WEBHOOK_URL: https://sender.socialatendimento.com.br/webhooks/whatsapp
+      WEBHOOK_TOKEN: s8wUCXf6GKB6i4Knurjsw4xA
+      WEBHOOK_HEADER: api_access_token
+      IGNORE_GROUP_MESSAGE: false
+      IGNORE_BROADCAST_STATUSE: false
+      IGNORE_BROADCAST_MESSAGE: false
+      IGNORE_OWN_MESSAGES: false
+      IGNORE_CALLS: Mensagem Cliente
+      WEBHOOK_CALLS_MESSAGE: Mensagem Chatwoot
+      SEND_CONNECTION_STATUS: false
 ```
 
 ----------------------------------------------------------------------------
