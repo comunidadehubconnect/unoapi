@@ -50,17 +50,21 @@ Cole codigo abaixo
 nano .env
 
 ```
-
 WEBHOOK_URL=http://localhost:3000/webhooks/whatsapp
+</p>
 WEBHOOK_TOKEN=(Token Plataforna Superadmin)
+</p>
 WEBHOOK_HEADER=api_access_token
+</p>
 IGNORE_GROUP_MESSAGES=false
+</p>
 IGNORE_BROADCAST_STATUSES=false
+</p>
 SEND_CONNECTION_STATUS=false
+</p>
 REJECT_CALLS=mensagem que vai para o cliente
+</p>
 REJECT_CALLS_WEBHOOK=mensagem que vai para o webhook
-```
-
 </p>
 yarn build
 </p>
