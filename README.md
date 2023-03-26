@@ -6,7 +6,7 @@
 <p align="left">
 	<img src="https://telegram.org/favicon.ico" alt="Telegram-logo" width="32" />
 	<span>Grupo Telegram: </span>
-	<a href="https://t.me/unoapii" target="_blank">Grupo</a>
+	<a href="https://t.me/unoapi" target="_blank">Grupo</a>
 </p>
 <hr />
 <p align="left">
