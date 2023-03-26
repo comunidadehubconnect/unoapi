@@ -182,8 +182,11 @@ Verifique se codigo copiado está extamente alinhado igual abaixo
 <img src="https://github.com/EngajamentoFlow/unoapi/blob/main/modelo.png" alt="Quepasa-logo" width="1000" />
 
 </p>
-
+nano unoapi
+</p>
 nano docker-compose.yml
+</p>
+
 </p>
 
 ```
