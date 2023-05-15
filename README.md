@@ -65,7 +65,6 @@ WEBHOOK_URL=https://urldosite/webhooks/whatsapp
 WEBHOOK_TOKEN=Coloque Token Agente aqui
 WEBHOOK_HEADER=api_access_token
 BASE_URL=http://localhost:9876
-PORT=the http port
 IGNORE_GROUP_MESSAGES=false
 IGNORE_BROADCAST_STATUSES=false
 IGNORE_BROADCAST_MESSAGES=false
