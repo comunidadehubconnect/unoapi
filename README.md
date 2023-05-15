@@ -61,7 +61,7 @@ nano .env
 </p>
 
 ```
-WEBHOOK_URL=http://localhost:3000/webhooks/whatsapp
+WEBHOOK_URL=https://urldosite/webhooks/whatsapp
 WEBHOOK_TOKEN=Coloque Token Agente aqui
 WEBHOOK_HEADER=api_access_token
 BASE_URL=http://localhost:9876
