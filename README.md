@@ -62,13 +62,21 @@ nano .env
 
 ```
 WEBHOOK_URL=http://localhost:3000/webhooks/whatsapp
-WEBHOOK_TOKEN=(Token Plataforna Superadmin)
+WEBHOOK_TOKEN=Coloque Token Agente aqui
 WEBHOOK_HEADER=api_access_token
+BASE_URL=current base url to download medias
+PORT=the http port
 IGNORE_GROUP_MESSAGES=false
 IGNORE_BROADCAST_STATUSES=false
-SEND_CONNECTION_STATUS=false
-REJECT_CALLS=mensagem que vai para o cliente
-REJECT_CALLS_WEBHOOK=mensagem que vai para o webhook
+IGNORE_BROADCAST_MESSAGES=false
+IGNORE_HISTORY_MESSAGES=true
+IGNORE_OWN_MESSAGES=false
+IGNORE_YOURSELF_MESSAGES=true
+COMPOSING_MESSAGE=true
+REJECT_CALLS=Olá! Sinto muito, mas não consigo responder chamadas neste momento. Por favor, deixe uma mensagem com seu nome e número de telefone, e eu retornarei assim que possível. Obrigado!
+REJECT_CALLS_WEBHOOK=Olá! Recebi sua chamada, mas não consigo atendê-la pessoalmente no momento. No entanto, sua mensagem é importante para mim. Por favor, deixe seu nome, número de telefone e motivo da ligação, e entrarei em contato o mais breve possível. Agradeço sua compreensão!
+SEND_CONNECTION_STATUS=true
+UNOAPI_BASE_STORE=./data
 ```
 yarn build
 </p>
@@ -94,6 +102,7 @@ git checkout develop
 Para voltar para produção 
 </p>
 git checkout main
+</p>
 </p>
 
 ----------------------------------------------------------------------------
