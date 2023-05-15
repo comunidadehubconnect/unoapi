@@ -97,6 +97,7 @@ git checkout main
 </p>
 
 ----------------------------------------------------------------------------
+----------------------------------------------------------------------------
 
 
 </p>
@@ -110,73 +111,7 @@ git checkout main
 
 ----------------------------------------------------------------------------
 
-**Versão Docker**
 
-**Manual de Instalação UNOAPI via Docker**
-
-----------------------------------------------------------------------------
-
-
-</p>
-cd
-</p>
-mkdir unoapi
-</p>
-cd unoapi
-</p>
-Verifique se codigo copiado está extamente alinhado igual abaixo
-</p>
-
-<img src="https://github.com/EngajamentoFlow/unoapi/blob/main/modelo.png" alt="Quepasa-logo" width="1000" />
-
-</p>
-nano unoapi
-</p>
-nano docker-compose.yml
-</p>
-
-```
-version: '3'
-services:
-  app:
-    image: clairton/unoapi-cloud:latest
-    ports:
-    - 9876:9876
-    volumes:
-      - ./data:/home/u/app/data
-    deploy:
-      restart_policy:
-        condition: on-failure
-    environment:
-      BASE_URL: http://194.60.87.179:9876
-      WEBHOOK_URL: https://sender.socialatendimento.com.br/webhooks/whatsapp
-      WEBHOOK_TOKEN: s8wUCXf6GKB6i4Knurjsw4xA
-      WEBHOOK_HEADER: api_access_token
-      IGNORE_GROUP_MESSAGE: false
-      IGNORE_BROADCAST_STATUSE: false
-      IGNORE_BROADCAST_MESSAGE: false
-      IGNORE_OWN_MESSAGES: false
-      IGNORE_CALLS: Mensagem Cliente
-      WEBHOOK_CALLS_MESSAGE: Mensagem Chatwoot
-      SEND_CONNECTION_STATUS: false
-```
-
-----------------------------------------------------------------------------
-
- **Colocando para roda**
- 
- docker compose up -d
-
-----------------------------------------------------------------------------
-
-----------------------------------------------------------------------------
-
-</p>
-
-**Pronto tudo Funcionando**
-
-</p>
-----------------------------------------------------------------------------
 </p>
 
 **Gostou do Tutorial? Faça sua Contribuição**
