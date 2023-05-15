@@ -64,7 +64,7 @@ nano .env
 WEBHOOK_URL=http://localhost:3000/webhooks/whatsapp
 WEBHOOK_TOKEN=Coloque Token Agente aqui
 WEBHOOK_HEADER=api_access_token
-BASE_URL=current base url to download medias
+BASE_URL=http://localhost:9876
 PORT=the http port
 IGNORE_GROUP_MESSAGES=false
 IGNORE_BROADCAST_STATUSES=false
