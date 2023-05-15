@@ -91,21 +91,6 @@ pm2 save
 
 
 ----------------------------------------------------------------------------
-
-**Quer ser experimentar novas features no Unoapi? Utilize o branch develop**
-
-</p>
-Antes do git pull, faça o seguinte:
-</p>
-git checkout develop
-</p>
-Para voltar para produção 
-</p>
-git checkout main
-</p>
-</p>
-
-----------------------------------------------------------------------------
 ----------------------------------------------------------------------------
 
 
