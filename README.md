@@ -81,9 +81,11 @@ yarn build
 </p>
 pm2 start dist/index.js --name UNOAPI
 </p>
-pm2 startup ubuntu -u root
 </p>
-sudo env PATH=$PATH:/usr/bin pm2 startup ubuntu -u root --hp
+EXECUTE COMANDO ABAIXO PARA NÃO CAIR QUANDO REINICIAR A VPS
+</p>
+sudo pm2 startup ubuntu -u root && sudo pm2 startup ubuntu -u root --hp /root && sudo pm2 save
+</p>
 </p>
 pm2 save
 </p>
