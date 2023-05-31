@@ -7,7 +7,7 @@
 <hr />
 <p align="left">
 	<img src="https://whatsapp.com/favicon.ico" alt="WhatsAPP-logo" width="32" />
-	<span>Grupo WhatsaAPP: </span>
+	<span>Grupo WhatsaAPP UNOAPI: </span>
 	<a href="https://chat.whatsapp.com/KOc9il7AdQVCG06fTmG3Uh" target="_blank">Grupo</a>
 </p>
 
@@ -28,8 +28,6 @@
 
 </p>
 
-
-----------------------------------------------------------------------------
 <hr />
 <hr />
 
@@ -126,7 +124,7 @@ WIDGET_BRAND_URL
 </p>
 
 <hr />
-
+<hr />
 
 **Manual de Instalação UNOAPI**
 
