@@ -180,9 +180,8 @@ sudo pm2 startup ubuntu -u root && sudo pm2 startup ubuntu -u root --hp /root &&
 pm2 save
 </p>
 
-
-----------------------------------------------------------------------------
-----------------------------------------------------------------------------
+<hr />
+<hr />
 
 **Recompilando seu Chatwoot**
 
@@ -212,7 +211,8 @@ systemctl daemon-reload
 systemctl restart chatwoot.target
 </p>
 
-----------------------------------------------------------------------------
+<hr />
+<hr />
 
 </p>
 
@@ -242,19 +242,13 @@ Print abaixo
 <img src="https://github.com/clairton/unoapi-cloud/blob/main/examples/chatwoot/prints/create_contact.png" alt="Quepasa-logo" width="1000" />
 <img src="https://github.com/clairton/unoapi-cloud/blob/main/examples/chatwoot/prints/read_qrcode.png" alt="Quepasa-logo" width="1000" />
 
-</p>
+<hr />
+<hr />
 
 **Pronto tudo Funcionando**
 
-</p>
-
-
-----------------------------------------------------------------------------
-
-----------------------------------------------------------------------------
-
-
-</p>
+<hr />
+<hr />
 
 **Gostou do Tutorial? Faça sua Contribuição**
 
@@ -266,4 +260,4 @@ Print abaixo
 ```
 45959142000119	
 ```
-----------------------------------------------------------------------------
+<hr />
