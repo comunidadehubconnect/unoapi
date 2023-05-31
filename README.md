@@ -184,6 +184,63 @@ pm2 save
 ----------------------------------------------------------------------------
 ----------------------------------------------------------------------------
 
+**Recompilando seu Chatwoot**
+
+</p>
+sudo -i -u chatwoot
+</p>
+cd chatwoot
+</p>
+git checkout master && git pull
+</p>
+rvm reinstall ruby-3.1.3
+</p>
+rvm use 3.1.3 --default
+</p>
+bundle
+</p>
+yarn
+</p>
+rake assets:precompile RAILS_ENV=production
+</p>
+RAILS_ENV=production bundle exec rake db:migrate
+</p>
+exit
+</p>
+systemctl daemon-reload
+</p>
+systemctl restart chatwoot.target
+</p>
+
+----------------------------------------------------------------------------
+
+</p>
+
+**Acesse ChatWoot**
+
+</p>
+Caixas de Entrada
+</p>
+Adicionar Caixas de Entrada
+</p>
+Canal do whatsapp
+</p>
+Nome da Caixa de Entrada (Adicione o que desejar)
+</p>
+Número de telefone (+Número de telefone)
+</p>
+ID do número de telefone (+Número de telefone )
+</p>
+ID da Conta de Negócios (Número de telefone )
+</p>
+Chave da API (any)
+</p>
+Print abaixo
+
+<img src="https://github.com/clairton/unoapi-cloud/blob/main/examples/chatwoot/prints/copy_token.png" alt="Quepasa-logo" width="1000" />
+<img src="https://github.com/clairton/unoapi-cloud/blob/main/examples/chatwoot/prints/create_channel.png" alt="Quepasa-logo" width="1000" />
+<img src="https://github.com/clairton/unoapi-cloud/blob/main/examples/chatwoot/prints/create_contact.png" alt="Quepasa-logo" width="1000" />
+<img src="https://github.com/clairton/unoapi-cloud/blob/main/examples/chatwoot/prints/read_qrcode.png" alt="Quepasa-logo" width="1000" />
 
 </p>
 
