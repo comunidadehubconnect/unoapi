@@ -10,8 +10,8 @@
 	<span>Grupo WhatsaAPP UNOAPI: </span>
 	<a href="https://chat.whatsapp.com/KOc9il7AdQVCG06fTmG3Uh" target="_blank">Grupo</a>
 </p>
-
-----------------------------------------------------------------------------
+<hr />
+<hr />
 
 </p>
 
