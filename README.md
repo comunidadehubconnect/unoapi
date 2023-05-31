@@ -3,10 +3,6 @@
 	<p align="center">UNOAPI é um software de código aberto, totalmente gratuito, para troca de mensagens com a plataforma Whatsapp</p>
 </p>
 <hr />
-<p align="left">
-	<img src="https://telegram.org/favicon.ico" alt="Telegram-logo" width="32" />
-	<span>Grupo Telegram: </span>
-	<a href="https://t.me/unoapi" target="_blank">Grupo</a>
 </p>
 <hr />
 <p align="left">
@@ -34,6 +30,102 @@
 
 
 ----------------------------------------------------------------------------
+<hr />
+<hr />
+
+
+**Manual de Instalação ChatWoot**
+
+sudo apt update && apt upgrade -y
+</p>
+wget https://get.chatwoot.app/linux/install.sh
+</p>
+chmod +x install.sh
+</p>
+./install.sh --install
+</p>
+Use as opções abaixo
+</p>
+yes
+</p>
+chatwoot.dominio.com.br
+</p>
+contato@dominio.com.br
+</p>
+yes para todos
+</p>
+<hr />
+
+**Alterando Idioma e ativando sua tela de cadastro**
+
+</p>
+cd /home/chatwoot/chatwoot
+</p>
+nano .env
+</p>
+Altere a linha
+</p>
+DEFAULT_LOCALE=pt_BR
+</p>
+ENABLE_ACCOUNT_SIGNUP=true
+</p>
+sudo systemctl restart chatwoot.target
+</p>
+Acesse: seudominio.com.br
+</p>
+Faça seu cadastro
+</p>
+
+<hr />
+
+**Habilitando configurações ocultas do Chatwoot**
+
+</p>
+No banco de dados PostgreSQL
+</p>
+sudo -u postgres psql
+</p>
+\c chatwoot_production
+</p>
+update installation_configs set locked = false;
+</p>
+\q
+</p>
+
+<hr />
+
+**NOMES CHATWOOT TERMOS E POLITICA DE PRIVACIDADE**
+
+**Acesse super Admin**
+</p>
+https://seudominio.com.br/super_admin
+</p>
+Opção>installation_configs
+</p>
+LOGO
+</p>
+LOGO_THUMBNAIL
+</p>
+NOMES CHATWOOT:
+</p>
+Alterando nomes na plataforma
+</p>
+INSTALLATION_NAME
+</p>
+BRAND_NAME
+</p>
+TERMOS E POLITICA DE PRIVACIDADE
+</p>
+TERMS_URL
+</p>
+PRIVACY_URL
+</p>
+BRAND_URL
+</p>
+WIDGET_BRAND_URL
+</p>
+
+<hr />
 
 
 **Manual de Instalação UNOAPI**
