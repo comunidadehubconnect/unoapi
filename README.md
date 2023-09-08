@@ -1,6 +1,6 @@
 <p align="center">
 <img src="https://cwmkt.com.br/wp-content/uploads/2023/08/logo-github-cwmkt.svg" alt="DispZap Whats Marketing" width="240" />
-<p align="center">Seja bem-vindo ao Guia de atualização do n8n, nodejs e quepasa 🚀</p>
+<p align="center">Seja bem-vindo ao Guia do Chatwoot+UnoAPI 🚀</p>
 </p>
   
 <p align="center">
@@ -12,142 +12,105 @@
 <hr />
 <hr />
 
-</p>
+<details>
+<summary>Manual de Instalação Chatwoot</summary>
 
-**Gostou do Tutorial? Faça sua Contribuição**
+### Atualize sua máquina com os últimos pacotes
 
-<img src="https://github.com/EngajamentoFlow/quepasa/blob/main/Contribui%C3%A7%C3%A3o.png" alt="Quepasa-logo" width="200" />
-</p>
-
-**PIX CNPJ**
-
-```
-45959142000119	
-```
-
-</p>
-
-<hr />
-<hr />
-
-
-**Manual de Instalação ChatWoot**
-
+```bash
 sudo apt update && apt upgrade -y
-</p>
+```
+
+### Baixe o instalador automático do Chatwoot
+
+```bash
 wget https://get.chatwoot.app/linux/install.sh
-</p>
+```
+
+### Execute a permisão no arquivo install.sh
+
+```bash
 chmod +x install.sh
-</p>
+```
+
+### Inicie a instalação, digite "yes" para SSL, em seguida digite seu dominio e prossiga confimando com yes.
+### Esse processo vai levar média ~ 15
+
+  ```bash
 ./install.sh --install
-</p>
+  ```
+
 Use as opções abaixo
-</p>
+
 yes
-</p>
-chatwoot.dominio.com.br
-</p>
+
+app.dominio.com.br
+
 contato@dominio.com.br
-</p>
+
 yes para todos
-</p>
-<hr />
 
-**Alterando Idioma e ativando sua tela de cadastro**
+### Alterando Idioma e ativando sua tela de cadastro
 
-</p>
-cd /home/chatwoot/chatwoot
-</p>
-nano .env
-</p>
-Altere a linha
-</p>
-DEFAULT_LOCALE=pt_BR
-</p>
-ENABLE_ACCOUNT_SIGNUP=true
-</p>
-sudo systemctl restart chatwoot.target
-</p>
-Acesse: seudominio.com.br
-</p>
+```bash
+nano /home/chatwoot/chatwoot/.env
+```
+
+Altere a linha:
+
+`DEFAULT_LOCALE=pt_BR` para `ENABLE_ACCOUNT_SIGNUP=true`
+
+```bash
+systemctl daemon-reload && systemctl restart chatwoot.target
+```
+
+Acesse: app.seudominio.com.br
+
 Faça seu cadastro
-</p>
 
-<hr />
+### Habilitando configurações ocultas do Chatwoot no banco de dados PostgreSQL
 
-**Habilitando configurações ocultas do Chatwoot**
-
-</p>
-No banco de dados PostgreSQL
-</p>
-sudo -u postgres psql
-</p>
+```bash
+sudo -i -u postgres psql
 \c chatwoot_production
-</p>
+```
+
+```bash
 update installation_configs set locked = false;
-</p>
+```
+
+```bash
 \q
-</p>
+```
 
-<hr />
+</details>
 
-**NOMES CHATWOOT TERMOS E POLITICA DE PRIVACIDADE**
+<details>
+  
+<summary>Manual de Instalação UNOAPI</summary>
 
-**Acesse super Admin**
-</p>
-https://seudominio.com.br/super_admin
-</p>
-Opção>installation_configs
-</p>
-LOGO
-</p>
-LOGO_THUMBNAIL
-</p>
-NOMES CHATWOOT:
-</p>
-Alterando nomes na plataforma
-</p>
-INSTALLATION_NAME
-</p>
-BRAND_NAME
-</p>
-TERMOS E POLITICA DE PRIVACIDADE
-</p>
-TERMS_URL
-</p>
-PRIVACY_URL
-</p>
-BRAND_URL
-</p>
-WIDGET_BRAND_URL
-</p>
 
-<hr />
-<hr />
+## Instalando API UNO
 
-**Manual de Instalação UNOAPI**
-
-</p>
 sudo apt update && apt upgrade -y
-</p>
+
 sudo apt-get install -y libgbm-dev wget unzip fontconfig locales gconf-service libasound2 libatk1.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libexpat1 libfontconfig1 libgcc1 libgconf-2-4 libgdk-pixbuf2.0-0 libglib2.0-0 libgtk-3-0 libnspr4 libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils
-</p>
-</p>
-</p>
+
+
 git clone https://github.com/clairton/unoapi-cloud
-</p>
+
 cd unoapi-cloud
-</p>
+
 chmod 777 data
-</p>
+
 npm install pm2 -g
-</p>
+
 yarn install
-</p>
+
 Cole codigo abaixo
-</p>
+
 nano .env
-</p>
+
 
 ```
 WEBHOOK_URL=https://urldosite/webhooks/whatsapp
@@ -167,73 +130,59 @@ SEND_CONNECTION_STATUS=true
 UNOAPI_BASE_STORE=./data
 ```
 yarn build
-</p>
+
 pm2 start dist/index.js --name UNOAPI
-</p>
-</p>
 
-**EXECUTE COMANDO ABAIXO PARA NÃO CAIR QUANDO REINICIAR A VPS**
 
-</p>
+## EXECUTE COMANDO ABAIXO PARA NÃO CAIR QUANDO REINICIAR A VPS
+
+
 sudo pm2 startup ubuntu -u root && sudo pm2 startup ubuntu -u root --hp /root && sudo pm2 save
-</p>
-</p>
 
-<hr />
-<hr />
+</details>
 
-**Recompilando seu Chatwoot**
+## Recompilando seu Chatwoot
 
-</p>
+
 sudo -i -u chatwoot
-</p>
+
 cd chatwoot
-</p>
+
 git checkout master && git pull
-</p>
-rvm reinstall ruby-3.1.3
-</p>
-rvm use 3.1.3 --default
-</p>
+
 bundle
-</p>
+
 yarn
-</p>
+
 rake assets:precompile RAILS_ENV=production
-</p>
+
 RAILS_ENV=production bundle exec rake db:migrate
-</p>
+
 exit
-</p>
+
 systemctl daemon-reload
-</p>
+
 systemctl restart chatwoot.target
-</p>
 
-<hr />
-<hr />
+## Acesse ChatWoot
 
-</p>
 
-**Acesse ChatWoot**
-
-</p>
 Caixas de Entrada
-</p>
+
 Adicionar Caixas de Entrada
-</p>
+
 Canal do whatsapp
-</p>
+
 Nome da Caixa de Entrada (Adicione o que desejar)
-</p>
+
 Número de telefone (+Número de telefone)
-</p>
+
 ID do número de telefone (+Número de telefone )
-</p>
+
 ID da Conta de Negócios (Número de telefone )
-</p>
+
 Chave da API (any)
-</p>
+
 Print abaixo
 
 <img src="https://github.com/clairton/unoapi-cloud/blob/main/examples/chatwoot/prints/copy_token.png" alt="Quepasa-logo" width="1000" />
@@ -241,8 +190,6 @@ Print abaixo
 <img src="https://github.com/clairton/unoapi-cloud/blob/main/examples/chatwoot/prints/create_contact.png" alt="Quepasa-logo" width="1000" />
 <img src="https://github.com/clairton/unoapi-cloud/blob/main/examples/chatwoot/prints/read_qrcode.png" alt="Quepasa-logo" width="1000" />
 
-<hr />
-<hr />
 
-**Pronto tudo Funcionando**
+
 
