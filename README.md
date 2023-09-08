@@ -141,6 +141,10 @@ sudo pm2 startup ubuntu -u root && sudo pm2 startup ubuntu -u root --hp /root &&
 
 </details>
 
+<details>
+
+<summary>Rebuild Chatwoot</summary>
+
 ## Recompilando seu Chatwoot
 
 
@@ -164,8 +168,13 @@ systemctl daemon-reload
 
 systemctl restart chatwoot.target
 
-## Acesse ChatWoot
+</details>
 
+<details>
+  
+<summary>Criando Caixa de Entrada</summary>
+
+## Acesse ChatWoot
 
 Caixas de Entrada
 
@@ -190,6 +199,6 @@ Print abaixo
 <img src="https://github.com/clairton/unoapi-cloud/blob/main/examples/chatwoot/prints/create_contact.png" alt="Quepasa-logo" width="1000" />
 <img src="https://github.com/clairton/unoapi-cloud/blob/main/examples/chatwoot/prints/read_qrcode.png" alt="Quepasa-logo" width="1000" />
 
-
+</details>
 
 
