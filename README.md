@@ -92,27 +92,41 @@ update installation_configs set locked = false;
 
 ## Instalando API UNO
 
+```bash
 sudo apt update && apt upgrade -y
+```
 
+```bash
 sudo apt-get install -y libgbm-dev wget unzip fontconfig locales gconf-service libasound2 libatk1.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libexpat1 libfontconfig1 libgcc1 libgconf-2-4 libgdk-pixbuf2.0-0 libglib2.0-0 libgtk-3-0 libnspr4 libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils
+```
 
-
+```bash
 git clone https://github.com/clairton/unoapi-cloud
+```
 
+```bash
 cd unoapi-cloud
+```
 
+```bash
 chmod 777 data
+```
 
+```bash
 npm install pm2 -g
+```
 
+```bash
 yarn install
+```
 
 Cole codigo abaixo
 
+```bash
 nano .env
-
-
 ```
+
+```bash
 WEBHOOK_URL=https://urldosite/webhooks/whatsapp
 WEBHOOK_TOKEN=Coloque Token Agente aqui
 WEBHOOK_HEADER=api_access_token
@@ -129,15 +143,21 @@ REJECT_CALLS_WEBHOOK=Olá! Recebi sua chamada, mas não consigo atendê-la pesso
 SEND_CONNECTION_STATUS=true
 UNOAPI_BASE_STORE=./data
 ```
+
+```bash
 yarn build
+```
 
+```bash
 pm2 start dist/index.js --name UNOAPI
-
+```
 
 ## EXECUTE COMANDO ABAIXO PARA NÃO CAIR QUANDO REINICIAR A VPS
 
-
+```bash
 sudo pm2 startup ubuntu -u root && sudo pm2 startup ubuntu -u root --hp /root && sudo pm2 save
+```
+
 
 </details>
 
@@ -147,32 +167,48 @@ sudo pm2 startup ubuntu -u root && sudo pm2 startup ubuntu -u root --hp /root &&
 
 ## Recompilando seu Chatwoot
 
-
+```bash
 sudo -i -u chatwoot
+```
 
+```bash
 cd chatwoot
+```
 
+```bash
 git checkout master && git pull
+```
 
+```bash
 bundle
+```
 
+```bash
 yarn
+```
 
+```bash
 rake assets:precompile RAILS_ENV=production
+```
 
+```bash
 RAILS_ENV=production bundle exec rake db:migrate
+```
 
+```bash
 exit
+```
 
+```bash
 systemctl daemon-reload
+```
 
+```bash
 systemctl restart chatwoot.target
+```
 
 </details>
 
-<details>
-  
-<summary>Criando Caixa de Entrada</summary>
 
 ## Acesse ChatWoot
 
@@ -198,7 +234,3 @@ Print abaixo
 <img src="https://github.com/clairton/unoapi-cloud/blob/main/examples/chatwoot/prints/create_channel.png" alt="Quepasa-logo" width="1000" />
 <img src="https://github.com/clairton/unoapi-cloud/blob/main/examples/chatwoot/prints/create_contact.png" alt="Quepasa-logo" width="1000" />
 <img src="https://github.com/clairton/unoapi-cloud/blob/main/examples/chatwoot/prints/read_qrcode.png" alt="Quepasa-logo" width="1000" />
-
-</details>
-
-
